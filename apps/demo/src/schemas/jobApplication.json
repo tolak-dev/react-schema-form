@@ -1,0 +1,278 @@
+{
+  "component": "form",
+  "name": "job_application_form",
+  "ui": { "spacing": 2, "totalColumns": 12 },
+  "children": [
+    {
+      "component": "group",
+      "name": "personal_info",
+      "label": "Personal Information",
+      "ui": { "totalColumns": 12, "spacing": 2 },
+      "children": [
+        {
+          "component": "text",
+          "name": "first_name",
+          "label": "First Name",
+          "placeholder": "Enter your first name",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          },
+          "validation": {
+            "required": { "value": true, "message": "First name is required" }
+          }
+        },
+        {
+          "component": "text",
+          "name": "last_name",
+          "label": "Last Name",
+          "placeholder": "Enter your last name",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          },
+          "validation": {
+            "required": { "value": true, "message": "Last name is required" }
+          }
+        },
+        {
+          "component": "text",
+          "name": "email",
+          "label": "Email Address",
+          "placeholder": "you@example.com",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 12, "md": 12 },
+            "variant": "outlined",
+            "color": "primary"
+          },
+          "validation": {
+            "required": { "value": true, "message": "Email is required" },
+            "pattern": {
+              "value": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+              "message": "Enter a valid email"
+            }
+          }
+        },
+        {
+          "component": "text",
+          "name": "phone",
+          "label": "Phone Number",
+          "placeholder": "+1234567890",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 12, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "component": "group",
+      "name": "position_info",
+      "label": "Position Details",
+      "ui": { "totalColumns": 12, "spacing": 2 },
+      "children": [
+        {
+          "component": "select",
+          "name": "job_position",
+          "label": "Position Applying For",
+          "placeholder": "Select a position",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          },
+          "options": [
+            { "label": "Frontend Developer", "value": "frontend" },
+            { "label": "Backend Developer", "value": "backend" },
+            { "label": "Full Stack Developer", "value": "fullstack" },
+            { "label": "Data Analyst", "value": "data_analyst" },
+            { "label": "DevOps Engineer", "value": "devops" }
+          ],
+          "validation": {
+            "required": { "value": true, "message": "Select a position" }
+          }
+        },
+        {
+          "component": "number",
+          "name": "years_experience",
+          "label": "Years of Professional Experience",
+          "placeholder": "Enter number of years",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          },
+          "validation": {
+            "min": { "value": 0, "message": "Cannot be negative" },
+            "max": { "value": 50, "message": "Enter a realistic number" }
+          }
+        }
+      ]
+    },
+    {
+      "component": "group",
+      "name": "skills",
+      "label": "Skills & Expertise",
+      "ui": { "totalColumns": 12, "spacing": 2 },
+      "children": [
+        {
+          "component": "checkbox",
+          "name": "skills_frontend",
+          "label": "Frontend Skills",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 4 },
+            "color": "primary"
+          },
+          "options": [
+            { "label": "React", "value": "react" },
+            { "label": "Angular", "value": "angular" },
+            { "label": "Vue", "value": "vue" }
+          ]
+        },
+        {
+          "component": "checkbox",
+          "name": "skills_backend",
+          "label": "Backend Skills",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 4 },
+            "color": "primary"
+          },
+          "options": [
+            { "label": "Node.js", "value": "node" },
+            { "label": "Python/Django", "value": "django" },
+            { "label": "Java/Spring", "value": "spring" }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "other_skills",
+          "label": "Other Skills",
+          "placeholder": "Specify any other relevant skills",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 12, "md": 4 },
+            "variant": "outlined",
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "component": "group",
+      "name": "education",
+      "label": "Education",
+      "ui": { "totalColumns": 12, "spacing": 2 },
+      "children": [
+        {
+          "component": "text",
+          "name": "highest_degree",
+          "label": "Highest Degree",
+          "placeholder": "e.g., B.Sc. Computer Science",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          },
+          "validation": {
+            "required": {
+              "value": true,
+              "message": "Enter your highest degree"
+            }
+          }
+        },
+        {
+          "component": "text",
+          "name": "university",
+          "label": "University/Institute",
+          "placeholder": "Enter the institution name",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          }
+        },
+        {
+          "component": "number",
+          "name": "graduation_year",
+          "label": "Year of Graduation",
+          "placeholder": "e.g., 2022",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          },
+          "validation": { "min": { "value": 1900 }, "max": { "value": 2100 } }
+        }
+      ]
+    },
+    {
+      "component": "group",
+      "name": "cover_letter",
+      "label": "Cover Letter & Additional Info",
+      "ui": { "totalColumns": 12, "spacing": 2 },
+      "children": [
+        {
+          "component": "multiline-text",
+          "name": "cover_letter_text",
+          "label": "Cover Letter",
+          "placeholder": "Write a brief cover letter",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 12, "md": 12 },
+            "variant": "outlined",
+            "color": "primary"
+          },
+          "validation": {
+            "required": { "value": true, "message": "Cover letter is required" }
+          }
+        },
+        {
+          "component": "text",
+          "name": "linkedin_profile",
+          "label": "LinkedIn Profile",
+          "placeholder": "https://linkedin.com/in/username",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          }
+        },
+        {
+          "component": "text",
+          "name": "portfolio_link",
+          "label": "Portfolio Link",
+          "placeholder": "https://yourportfolio.com",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 6, "md": 6 },
+            "variant": "outlined",
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "component": "group",
+      "name": "declaration",
+      "label": "Declaration",
+      "ui": { "totalColumns": 12, "spacing": 2 },
+      "children": [
+        {
+          "component": "checkbox",
+          "name": "confirm_info",
+          "label": "I confirm that all information provided is accurate",
+          "ui": {
+            "colSpan": { "xs": 12, "sm": 12, "md": 12 },
+            "color": "primary"
+          },
+          "validation": {
+            "required": {
+              "value": true,
+              "message": "You must confirm the information"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
